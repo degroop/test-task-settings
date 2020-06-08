@@ -1,29 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <sidebar-panel />
+    <settings-page />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import SidebarPanel from './components/SidebarPanel.vue';
+import SettingsPage from './components/SettingsPage.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    SidebarPanel,
+    SettingsPage
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "./assets/fonts/fonts.less";
+@import "./assets/styles/elements.less";
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #F5F5F7;
+    min-width: 1038px;
 }
 </style>
